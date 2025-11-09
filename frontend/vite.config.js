@@ -1,16 +1,20 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
+  plugins: [react(), tailwindcss()],
+  base: "/vibeathon/",
   build: {
     outDir: "dist",
   },
   server: {
     proxy: {
-      "/api": "https://vibeathon-zeta.vercel.app", // ✅ your backend live URL
+      "/api": {
+        target: "https://vibeathon-zeta.vercel.app",
+        changeOrigin: true,
+        secure: true,
+      },
     },
   },
 });
