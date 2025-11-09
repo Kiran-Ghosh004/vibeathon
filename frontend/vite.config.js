@@ -4,17 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/vibeathon/",
   build: {
-    outDir: "dist",
-  },
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://vibeathon-zeta.vercel.app",
-        changeOrigin: true,
-        secure: true,
-      },
-    },
+    outDir: "dist", // Make sure it's "dist"
   },
 });
