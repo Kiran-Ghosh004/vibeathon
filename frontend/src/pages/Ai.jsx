@@ -28,7 +28,7 @@ const Ai = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:3000/api/krishna/ask", {
+      const res = await fetch("https://vibeathon-zeta.vercel.app/api/krishna/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question }),
