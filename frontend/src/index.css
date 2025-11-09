@@ -1,0 +1,151 @@
+/* 🌿 Bhagavad Gita Copilot — index.css */
+/* Fonts: 
+   - Sanskrit (Primary): Noto Sans Devanagari
+   - English (Secondary): Merriweather for verses, Outfit for UI
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+/* ==========================
+   FONT FAMILY SETUP
+========================== */
+
+:root {
+  --font-sanskrit: "Noto Sans Devanagari", serif;  /* Primary Font */
+  --font-english: "Merriweather", serif;            /* Secondary Font */
+  --font-ui: "Outfit", sans-serif;                  /* UI Font */
+  --color-gold: #c2995a;
+  --color-text: #2d2d2d;
+  --color-white: #fdfcf8;
+}
+
+
+body {
+  font-family: var(--font-english);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Sanskrit text */
+.sanskrit-text {
+  font-family: var(--font-sanskrit);
+  
+  color: var(--color-text);
+}
+
+/* English translation text */
+.english-text {
+  font-family: var(--font-english);
+  
+  
+}
+
+/* UI / Buttons */
+button {
+  font-family: var(--font-ui);
+  background-color: var(--color-gold);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #b88a4c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   DivineVerse Custom Scrollbar Styles
+   Add this to your index.css
+   ============================================ */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-radius: 10px;
+  border: 1px solid rgba(194, 153, 90, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c2995a 0%, #a67c3f 100%);
+  border-radius: 10px;
+  border: 2px solid #0a0a0a;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d4a962 0%, #c2995a 100%);
+  box-shadow: 0 0 10px rgba(194, 153, 90, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #b8884d 0%, #9a6e3a 100%);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c2995a #0a0a0a;
+}
+
+/* Optional: Thin scrollbar variant for smaller containers */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border: 1px solid #0a0a0a;
+}
+
+/* Optional: Hidden scrollbar that's still functional */
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Optional: Glowing scrollbar effect */
+.scrollbar-glow::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c2995a 0%, #a67c3f 100%);
+  box-shadow: 0 0 8px rgba(194, 153, 90, 0.4);
+}
+
+.scrollbar-glow::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 15px rgba(194, 153, 90, 0.7),
+              0 0 25px rgba(194, 153, 90, 0.3);
+}
+
+/* Optional: Horizontal scrollbar styling */
+::-webkit-scrollbar-corner {
+  background: #0a0a0a;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
